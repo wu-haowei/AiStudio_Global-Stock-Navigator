@@ -1,0 +1,6 @@
+{
+  "name": "全球股市航海王 (Global Stock Navigator)",
+  "description": "專業全球股市（台股、美股、日股等）技術面與籌碼面分析工具，結合 Gemini 2.0 Flash 與 Google 搜尋技術，即時捕捉全球市場動向。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
