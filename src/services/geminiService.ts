@@ -9,9 +9,12 @@ let ai: GoogleGenAI | null = null;
 
 function getAI() {
   if (!ai) {
-    const apiKey = process.env.GEMINI_API_KEY;
+    // In Vite, process.env is replaced during build via 'define' in vite.config.ts
+    // In local dev or GitHub Actions, we use the VITE_ prefix
+    const apiKey = (process.env.GEMINI_API_KEY) || (import.meta as any).env?.VITE_GEMINI_API_KEY;
+    
     if (!apiKey) {
-      throw new Error("GEMINI_API_KEY is not defined in environment variables.");
+      throw new Error("找不到 API Key。");
     }
     ai = new GoogleGenAI({ apiKey });
   }
